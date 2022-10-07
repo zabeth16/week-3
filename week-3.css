@@ -1,0 +1,697 @@
+.flex-top{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+
+}
+
+.flex{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+
+
+}
+/*字大小固定20px*/
+.home{
+    font-size: 20px;
+    flex:none;
+    text-align: center;
+    
+}
+
+
+/*PC、mobile 記得設定是否顯示*/
+.PC-menu{
+    display: flex ;
+    justify-content: flex-end;
+    align-items: center;
+    flex:auto;
+    text-align: center;
+
+
+
+
+}
+
+.mobile-menu{
+    display: none;
+    text-align: center;
+
+}
+
+
+.item{
+    
+    font-size: 20px;
+    flex:none;
+    margin-left: 10px;
+    text-align: center;
+
+}
+
+
+/*暴力整頓body*/
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.welcome{ /*利用水平的功能做完美置中排版*/
+    margin-top: 10px;
+    background-color: #ffad60;
+    height: 300px;
+    /*width: auto;*/
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    /*
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    */
+   
+
+
+}
+
+.welcome-text{
+    text-align: center;
+    font-size: 2em;
+}
+
+.main{
+    margin: 50px 0px;
+    width: 1200px;
+    background-color: rgb(147, 209, 209); /*方便看著用，看最後要不要做主題配色*/
+    height:590px; /*高度OK，算數學*/
+
+}
+
+.promo{
+    display: flex;
+}
+
+.promo-1{
+    height: 50px;
+    width: 50%;
+    display: flex;
+    background-color: #ffeead;
+    align-items: center;
+    position:relative;
+    overflow:hidden;
+
+
+}
+
+.promo-2{
+    height: 50px;
+    width: 50%;
+    display: flex;
+    background-color: #ffeead;
+    align-items: center;
+    position:relative;
+    overflow:hidden;
+    margin-left: 20px;
+
+    
+
+}
+
+.pic-s-1{ /*remember to put the picture*/
+    
+    width: 80px;
+    height: 50px;
+    background-color: #8bc24c;
+    
+    
+    object-fit:cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+
+
+.pic-s-2{
+    width: 80px;
+    height: 50px;
+    background-color: #8bc24c;
+    /*
+    background-image: url(pic.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    */
+    object-fit:cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.promo-text{
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 5px;
+    font-size: 20px;
+    
+}
+
+.promo-text-2{
+    justify-content: flex-end;
+    align-items: center;
+    margin-left: 5px;
+    font-size: 20px;
+    
+}
+
+
+.content-1{
+    display: flex;
+}
+
+.content-2{
+    display: flex;
+}
+
+.line-1{
+    display: flex;
+    margin-top: 20px;
+}
+
+.line-1-1{
+    display: flex;
+    margin-top: 20px;
+}
+
+.line-1-2{
+    display: flex;
+    margin-top: 20px;
+}
+
+.line-2{
+    display: flex;
+    margin-top: 20px;
+}
+
+.line-2-1{
+    display: flex;
+    margin-top: 20px;
+
+}
+
+/*square區*/
+.square-1{ 
+    width: 285px;
+    height: 240px;
+    background-color:#8bc24c ;
+    flex: content;
+    /*position: relative;*/
+    overflow:hidden;
+}
+
+
+.square-2{
+    width: 285px;
+    height: 240px;
+    background-color:#8bc24c ;
+    margin-left: 20px;
+    flex: content;
+    overflow:hidden;
+}
+
+.square-3{
+    width: 285px;
+    height: 240px;
+    background-color:#8bc24c ;
+    margin-left: 20px;
+    overflow:hidden;
+    
+}
+
+.square-4{
+    width: 285px;
+    height: 240px;
+    background-color:#8bc24c ;
+    margin-left: 20px;
+    flex: content;
+    overflow:hidden;
+}
+
+/*圖片大概長寬1:1.5*/
+/*我的圖片大概是寬285*長190*/
+/*圖片文字框用50高*/
+
+
+
+.pic{
+    width: 285px; /*原圖285寬*/
+    height: 240px; /*原圖190高*/
+    background-size:contain;
+
+    align-items: center;
+    position:relative;
+    /*overflow:hidden;*/
+    z-index:1;
+
+    
+    
+
+
+}
+
+/*這我原先控制大家的圖片*/
+img{        
+
+    /*display: block;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+    
+
+}
+
+/*開始針對各圖片做id命名控制*/
+
+#img-control{
+    height: 100%;
+}
+
+
+#star{
+
+    width: 30px;
+    height: 30px;
+
+    position:absolute; /*我定位是跟著pic層的*/
+    top:10px;
+    right:10px;
+    
+    /*scale: 0.1;*/
+    filter: drop-shadow(5px 5px 2px rgba(203, 161, 23, 0.7));
+    z-index:2;
+}
+
+
+
+
+
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: rgba(255, 255, 255, 0.5);
+    position: relative;
+    bottom: 50px;
+    left:0px;
+    z-index:3;
+    
+}
+
+.title-text{
+    text-align: center;
+    font-size: 20px;
+    line-height: 50px;
+
+    
+}
+
+/*
+.title-4{
+    margin-top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+.content-2{
+    display: flex;
+}
+
+
+
+.square-5{
+    width: 285px;
+    height: 240px;
+    background-color:#8bc24c ;
+    overflow:hidden;
+}
+
+.square-6{
+    width: 285px;
+    height: 240px;
+    background-color:#8bc24c ;
+    margin-left: 20px;
+    overflow:hidden;
+}
+
+.square-7{
+    width: 285px;
+    height: 240px;
+    background-color:#8bc24c ;
+    margin-left: 20px;
+    overflow:hidden;
+}
+
+.square-8{
+    width: 285px;
+    height: 240px;
+    background-color:#8bc24c ;
+    margin-left: 20px;
+    overflow:hidden;
+}
+
+
+/*平板的RWD  有摺疊起來喔!*/
+@media (max-width:1200px){
+
+    .flex{
+        flex-wrap: wrap;
+    }
+    .main{
+        flex-wrap: wrap;
+        width: 90%;
+        height:auto;
+    }
+
+    .content-1{
+        flex-wrap: wrap;
+    }
+
+    .content-2{
+        flex-wrap: wrap;
+    }
+    .line-1{
+        flex:content;
+       
+    }
+   
+
+    .line-1-1{
+        
+        flex: content;
+    }
+    .line-2{
+        flex: content;
+    }
+
+    .line-2-1{
+        flex: content;
+    }
+
+
+    .content-2{
+        flex-wrap: wrap;
+    }
+
+    .square-1{
+        
+        width: 45%;
+        /*flex: content;*/
+        /*flex-grow: 1;*/
+        
+
+        position:relative;
+        flex-wrap: wrap;
+        
+        
+        
+    }
+
+    .square-2{
+        width: 45%;
+        /*flex: none;*/
+        /*flex-grow: 1;*/
+        
+            
+        
+    }
+
+    .square-3{
+        width: 45%;
+        flex: content;
+        margin-left: 0;
+        
+        
+    }
+   
+    .square-4{
+        width: 45%;
+        /*flex: content;*/
+        
+    }
+
+    .square-5{
+        width: 50%;
+        
+    }
+
+
+    .square-6{
+        width: 50%;
+        
+    }
+
+    .square-7{
+        width: 50%;
+        /*flex: content;*/
+        margin-left: 0;
+        
+    }
+
+    .square-8{
+        width: 50%;
+    }
+
+
+
+    .pic{  /*圖片自適應啊啊啊啊*/
+        
+      
+        
+        flex-wrap: wrap;
+        width: 100%;
+        /*height: 100%;*/
+        /*margin-bottom: 48%;*/
+
+        /*position: relative;*/
+        
+        position:relative;
+        z-index: 1;       
+        
+        
+
+    }
+
+
+    img{        
+        /*
+        width: 100%;
+        height: auto;
+        */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        
+               
+        
+    
+    }
+
+
+
+
+    /*平板星星*/
+    /*WHHYY一直滑來滑去*/
+    #star{
+        position: absolute;
+        
+                      
+
+        
+        z-index:2;
+        
+    }
+    
+}
+
+
+
+/*手機板RWD 有摺疊起來了*/
+@media (max-width:600px){
+
+    /*這是TOP的flex，另外下方的FLEX要再另外做設定*/
+    .flex-top{
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+    
+    .home{       
+        text-align: center;
+    }
+    
+
+    
+    .PC-menu{
+        display: none ;
+        /*
+        justify-content: flex-end;
+        align-items: center;
+        flex:auto;
+        text-align: center;
+        */
+    }
+    
+
+
+
+    .mobile-menu{
+        display: block;
+        justify-content:flex-end;
+        align-items: center;
+        /*flex:auto;*/
+        text-align: center;
+
+        margin-left: auto;
+        margin-right: 0px;
+    
+    }
+
+    /*主內容的RWD*/
+
+    .flex{
+        flex-wrap: wrap;
+    }
+    
+    .main{
+        flex-wrap: wrap;
+    }
+
+    .promo{
+        flex-wrap: wrap;
+    }
+
+
+
+    .promo-1 {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        background-color: #ffeead;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+
+    .promo-2 {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        background-color: #ffeead;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+
+    .content-1{
+        flex-wrap: wrap;
+    }
+
+    .line-1{
+        flex-wrap: wrap;
+    }
+
+    .line-1-1{
+        flex-wrap: wrap;
+    }
+
+
+    
+
+
+
+
+
+    .square-1{
+        
+        width: 100%;
+        /*flex: content;*/
+        /*flex-grow: 1;*/
+
+
+        
+    }
+
+
+    .square-2{
+        width: 100%;
+        /*flex: none;*/
+        /*flex-grow: 1;*/
+        margin-left: 0;
+        margin-top: 20px;
+            
+        
+    }
+
+
+    .square-4{
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+
+
+    /*content 2  title5~8的*/
+
+    .content-2{
+        flex-wrap: wrap;
+    }
+
+    .line-2{
+        flex-wrap: wrap;
+    }
+
+    .line-2-1{
+        flex-wrap: wrap;
+    }
+
+    .square-5{
+        width: 100%;
+    }
+
+    .square-6{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .square-7{
+        width: 100%;
+    }
+
+    .square-8{
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+}

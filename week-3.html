@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8' />
+    <meta meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>⧑台北旅子圖鑑⧒</title><!--JavaScript-作業week-03-2022.10.05-->
+    <link rel="stylesheet" type="text/css" href="week-3.css">
+</head>
+
+<body>
+    <!--<button onclick = "get_data();" >資訊召喚按鈕</button>-->
+
+    <div class="flex-top">
+        <div class="home">⧑台北旅子圖鑑⧒</div>
+        <div class="PC-menu">
+            <div class="item">1階</div>
+            <div class="item">2階</div>
+            <div class="item">3階</div>
+            <div class="item">4階</div>
+        </div>
+        <div class="mobile-menu">
+            <img width="25" height="25" src="https://cdn0.iconfinder.com/data/icons/rank-badge/64/rank_badge-13-512.png">
+        </div>
+    </div>
+
+    <div class="welcome">
+        <div class="welcome-text">歡迎光臨台北旅子圖鑑</div>
+    </div>
+
+    <div class="flex"> <!--置中排版用-->
+        <div class="main"> <!--我要用串接的自建元素取代原本的文字、圖片-->
+            <div class="promo">
+                <div class="promo-1">
+                    <div class="pic-s-1">
+                    <!--<div><img width="100%" src="promo-1.jpg"></div> -->
+                    </div>
+                    <div class="promo-text"></div>
+                    
+    
+                </div>
+    
+                <div class="promo-2">
+                    <div class="pic-s-1">
+                        <!--<div><img width="100%" src="promo-2.jpg"></div>-->
+                    </div>
+                    <div class="promo-text"></div>
+    
+    
+                </div>
+            </div>
+    
+            <div class="content-1">
+                <div class="line-1"> <!--用衡4一行去規劃-->
+                    <div class="square-1">
+                        <div class="pic">
+                            
+                            <!--<img id="img-control" width="100%" src="01-monster.jpg"alt="">-->
+                                                       
+                        </div> 
+                        
+                        <div class="title"><!--標題1-->
+                            <div class="title-text"></div>
+                        </div> 
+                    </div>
+    
+                    <div class="square-2">
+                        <div class="pic">
+                           
+                            <!--<img id="img-control" width="100%" src="02-monster.jpg"alt="">-->
+                                                  
+                        </div> 
+    
+                        <div class="title">
+                            <div class="title-text"></div>
+                        </div> <!--標題2-->
+                    </div>
+                </div>
+    
+                <div class="line-1-1">
+                    <div class="square-3">
+                        <div class="pic">
+                            
+                        </div> 
+    
+                        <div class="title">
+                            <div class="title-text"></div>
+                        </div> <!--標題3-->
+                    </div>
+    
+                    <div class="square-4">
+                        <div class="pic">
+
+                        </div>
+    
+                        <div class="title">
+                            <div class="title-text"></div>
+                        </div><!--標題4-->
+                         
+                    </div>
+                </div>
+    
+    
+            </div>
+                
+    
+    
+    
+            <div class="content-2">
+                <div class="line-2">
+                    <div class="square-5">
+                        <div class="pic"></div>
+                                                     
+                        
+    
+                        <div class="title">
+                            <div class="title-text"></div>
+                        </div>
+                    </div>
+    
+                    <div class="square-6">
+                        <div class="pic"></div>
+                                                     
+                        
+    
+                        <div class="title">
+                            <div class="title-text"></div>
+                        </div>
+                    </div>
+                </div><!--Line2的div-->
+    
+                <div class="line-2-1">
+                    <div class="square-7">
+                        <div class="pic"></div>
+                                                       
+                        
+                        
+                        <div class="title">
+                            <div class="title-text"></div>
+                        </div>
+                    </div>
+    
+                    <div class="square-8">
+                        <div class="pic"></div>                                           
+                        
+                        
+                        <div class="title">
+                            <div class="title-text"></div>
+                        </div>
+                    </div>
+                </div>
+    
+            </div><!--content-2-->
+                         
+            </div>                     
+    
+        </div>
+
+
+<script>
+    
+
+
+
+    // //先試試手刻的溫度
+    // let div = document.createElement("div");
+    // let promo_title = document.querySelector(".promo-text");
+    // promo_title.appendChild(div);
+
+    // let promo_title_2 = document.querySelector(".promo-text");
+    // promo_title_2.appendChild(div);
+
+
+
+   //先把能顯示串接資料的函式寫好吧
+   function get_data(){
+        //利用 fetch 進行連線並取得資料
+        //記得要加 .then 來用一個function ，參數是response來接收伺服器回應的物件
+        fetch("https://padax.github.io/taipei-day-trip-resources/taipei-attractions-assignment.json").then(function(response){
+
+            return response.json();
+        
+        }).then( function(data){ 
+        
+            let data_list = data.result.results ;
+            
+            // //來用顯示資料在我的畫面上，這段目前沒用到
+            // let show = document.querySelector("#show_data");
+            
+
+
+            for (let p = 0 ; p < data_list.length ; p++){
+
+                let pic = data_list[p].file;                
+                first_pic = "https" + pic.split("https")[1];
+                
+
+                let promo_img = document.createElement("img");
+                promo_img.src = first_pic ;
+                let picS_1 = document.querySelectorAll(".pic-s-1");
+                picS_1[p].appendChild(promo_img);
+
+
+                let pic_2 = data_list[p+1].file;
+                first_pic_2 = "https" + pic_2.split("https")[1];
+                let promo_img_2 = document.createElement("img");
+                promo_img_2.src = first_pic_2;
+                picS_1[p+1].appendChild(promo_img_2);           
+
+                                
+
+                //上方標題
+                let promo_title = document.createTextNode(data_list[p].stitle);    
+                let promo_text = document.querySelectorAll(".promo-text");
+                promo_text[p].appendChild(promo_title);
+
+                let promo_title_2 = document.createTextNode(data_list[p+1].stitle);
+                promo_text[p+1].appendChild(promo_title_2);
+
+
+
+
+
+          
+
+
+                for (let i = p ; i < data_list.length ; i++ ){
+
+                    let title = data_list[i].stitle;
+
+                    let pic = data_list[i+2].file;                
+                    first_pic = "https" + pic.split("https")[1];  
+                    
+                    console.log( title , first_pic )//檢查用記得刪
+
+
+
+                    
+                    //下方圖片
+                    let pic_main = document.querySelectorAll(".pic");
+                    let main_img = document.createElement("img");
+                    
+                    main_img.src =  first_pic ;               
+                    //main_img.style.width = "100% ";
+                    main_img.style.height = "100%" ;
+                    
+
+                    pic_main[i].appendChild(main_img);
+
+
+                    let main_title = document.createTextNode(data_list[i+2].stitle);
+                    let title_text = document.querySelectorAll(".title-text");
+                    title_text[i].appendChild(main_title);
+
+                                                
+                };
+                
+            }
+        
+
+        });
+
+
+    };
+
+//呼叫看資料用
+get_data();
+
+
+
+
+</script>
+
+
+</body>
+</html>
